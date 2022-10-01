@@ -28,3 +28,30 @@ List<Map<String, dynamic>> acacia = [
     'rating':9.0
   }
 ];
+List<Map<String, dynamic>> acaciaComing = [
+  {
+      'title' :'John Wick (Chapter 4)',
+      'theme':['Action', 'Drama', 'Thriller'],
+      'description':'Keanu Reeves as John Wick, a professional hitman and assassin who has gained legendary reputation for his set of skills and is now hunted by the High Table ',
+      'poster':'john_wick.jpg',
+      'rating':'__'
+  },
+  {
+    'title' :'Guardians of the Galaxy (Volume 3)',
+    'theme':['Action', 'Comedy', 'Adventure'],
+    'description':'In Marvel Studios, Guardians of the Galaxy Vol.3 our beloved band of misfits are looking a bit different these days. Peter Quill, still reeling from the loss of Gamora must rally his team around him to defend to defend the universe',
+    'poster':'guardians_of_the_galaxy.jpg',
+    'rating':'__'
+  },
+  {
+    'title':'Transformers: Raise of the Beasts',
+    'theme':{
+      'theme_1': 'Action',
+      'theme_2': 'Adventure',
+      'theme_3':'Sci-Fi',
+    },
+    'description':'During the 1990s, the Maximals, Predacons and Terrorcons join the existing battle on Earth between Autobots and Decepticons',
+    'poster':'transformers.jpg',
+    'rating':'__'
+  }
+];
