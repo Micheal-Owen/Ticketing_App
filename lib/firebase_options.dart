@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCRfqjr7msut6c060a83mPpP4Ku8nTidfQ',
-    appId: '1:586685365516:android:193b8849199a1eec709d29',
-    messagingSenderId: '586685365516',
-    projectId: 'cinemax-1dabb',
-    storageBucket: 'cinemax-1dabb.appspot.com',
+    apiKey: 'AIzaSyAvBDwqada3f7tWRP0skHWXEdjYk4giMNw',
+    appId: '1:592603934040:android:e2f5cea1a68e3d2ea9492d',
+    messagingSenderId: '592603934040',
+    projectId: 'tickets-678e1',
+    storageBucket: 'tickets-678e1.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDe7k9wXE_of8yV0EteItGZe3SLjZdVajQ',
-    appId: '1:586685365516:ios:f8d7f124a781ec6a709d29',
-    messagingSenderId: '586685365516',
-    projectId: 'cinemax-1dabb',
-    storageBucket: 'cinemax-1dabb.appspot.com',
-    iosClientId: '586685365516-8vl8n0dr8io0u1b56hml2ieacsjfga3d.apps.googleusercontent.com',
+    apiKey: 'AIzaSyAPZbtmK6U_Zrs27R2EUMy0Lxmran16bSo',
+    appId: '1:592603934040:ios:4f7a3a443f7a7069a9492d',
+    messagingSenderId: '592603934040',
+    projectId: 'tickets-678e1',
+    storageBucket: 'tickets-678e1.appspot.com',
+    iosClientId: '592603934040-g8rd2q26lf8jgg27b4obul5ciujn5qip.apps.googleusercontent.com',
     iosBundleId: 'com.example.cinemax',
   );
 }

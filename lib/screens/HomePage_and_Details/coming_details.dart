@@ -23,18 +23,18 @@ class ComingDetails extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-            width: size.width*0.99,
+            width: size.width*0.95,
             height: 700,
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical:15),
             decoration: BoxDecoration(
-                color: Styles.primaryColor,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(24)
             ),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ConstrainedBox(
-                    constraints: const BoxConstraints(maxHeight:450),
+                    constraints: const BoxConstraints(maxHeight:450, maxWidth: 400),
                     child: Container(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
@@ -60,7 +60,7 @@ class ComingDetails extends StatelessWidget {
                                 Flexible(
                                   child: Text(title,
                                       style: const TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           decoration: TextDecoration.none),
                                       textScaleFactor: 1.5,
                                   overflow: TextOverflow.clip,),
@@ -68,13 +68,18 @@ class ComingDetails extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height:15),
-                        Text(description,style: const TextStyle(color: Colors.white, decoration: TextDecoration.none), textScaleFactor: 1,),
-                        const SizedBox(height: 15,),
-                        Center(child: ElevatedButton(onPressed: (){}, child: const Text("COMING SOON"),))
+                        Text(description,style: const TextStyle(color: Colors.black, decoration: TextDecoration.none), textScaleFactor: 1,),
+                        const SizedBox(height: 15),
+                        Center(child: SizedBox(
+                          width: 200,
+                          child: ElevatedButton(
+                            onPressed: (){},
+                            style: const ButtonStyle(backgroundColor: MaterialStatePropertyAll(Color(0xFFF44336))),
+                            child: const Text("COMING SOON"),),
+                        ))
                       ],
                     ),
                   )
-
                 ]
             )
         ),

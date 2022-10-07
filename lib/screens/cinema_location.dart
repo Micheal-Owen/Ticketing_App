@@ -1,8 +1,6 @@
-import 'package:cinemax/screens/home_page.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:cinemax/screens/HomePage_and_Details/home_page.dart';
 import 'package:flutter/material.dart';
 import '../utils/styles.dart';
-
 class Location extends StatelessWidget {
   const Location({Key? key}) : super(key: key);
 
@@ -17,7 +15,7 @@ class Location extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ConstrainedBox(
-                constraints: BoxConstraints(
+                constraints: const BoxConstraints(
                   maxWidth: 80,
                   maxHeight: 80
                 ),
@@ -34,7 +32,7 @@ class Location extends StatelessWidget {
               ),
               InkWell(
                   onTap: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> const HomePage()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> const HomePage(location: 'ACACIA',)));
                   },
                 child: Container(
                   height: 50,
@@ -47,24 +45,34 @@ class Location extends StatelessWidget {
                 ),
               ),
               const SizedBox(height:10),
-              Container(
-                height: 50,
-                width: 200,
-                decoration: BoxDecoration(
-                  color: Styles.primaryColor,
-                  borderRadius: BorderRadius.circular(24),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> const HomePage(location: "METROPLEX NAALYA",)));
+                },
+                child: Container(
+                  height: 50,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: Styles.primaryColor,
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child:  const Center(child: Text("METROPLEX NAALYA", style: TextStyle(color: Colors.white))),
                 ),
-                child:  const Center(child: Text("METROPLEX NAALYA", style: TextStyle(color: Colors.white))),
               ),
               const SizedBox(height:10),
-              Container(
-                height: 50,
-                width: 200,
-                decoration: BoxDecoration(
-                  color: Styles.primaryColor,
-                  borderRadius: BorderRadius.circular(24),
+              InkWell(
+                onTap: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> const HomePage(location: 'ARENA MALL',)));
+                },
+                child: Container(
+                  height: 50,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: Styles.primaryColor,
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: const Center(child: Text("ARENA MALL", style: TextStyle(color: Colors.white))),
                 ),
-                child: const Center(child: Text("ARENA MALL", style: TextStyle(color: Colors.white))),
               ),
             ],
           ),

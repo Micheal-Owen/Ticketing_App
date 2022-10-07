@@ -1,11 +1,9 @@
+import 'package:cinemax/screens/cinema_location.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
-import 'package:cinemax/screens/HomePage_and_Details/home_page.dart';
 import 'package:cinemax/screens/Login_signup/log_in_screen.dart';
-
-//import 'auth.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({super.key});
@@ -17,7 +15,7 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return const LogInScreen();
     }else {
-      return const HomePage();
+      return const Location();
     }
   }
 }
@@ -29,7 +27,7 @@ class Loading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromARGB(255, 255, 255, 255),
+      color: const Color.fromARGB(255, 255, 255, 255),
       child: const Center(
         child: SpinKitChasingDots(
           color: Colors.red,

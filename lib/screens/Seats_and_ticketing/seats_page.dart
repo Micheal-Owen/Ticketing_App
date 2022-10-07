@@ -1,5 +1,5 @@
-import 'package:cinemax/screens/ticket_confimation.dart';
-import 'package:cinemax/screens/seat_widget.dart';
+import 'package:cinemax/screens/Seats_and_ticketing/ticket_confimation.dart';
+import 'package:cinemax/screens/Seats_and_ticketing/seat_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -70,7 +70,7 @@ class _BarItemPageState extends State<BarItemPage> {
                             spacing: 2,
                             children: List.generate(77, (index) {
                               return Container(
-                                  padding: EdgeInsets.all(0.1),
+                                  padding: const EdgeInsets.all(0.1),
                                   child:
                                     Seat(index: index)
                                   );

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
-import 'package:cinemax/screens//seat_number_model.dart';
+import 'package:cinemax/models/seat_number_model.dart';
 
 class Seat extends StatefulWidget {
   bool touched;

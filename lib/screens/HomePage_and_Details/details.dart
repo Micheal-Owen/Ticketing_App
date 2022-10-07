@@ -1,4 +1,4 @@
-import 'package:cinemax/screens/Seats_and_ticketing/seats_page.dart';
+import 'package:cinemax/screens/HomePage_and_Details/date_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:cinemax/utils/app_layout.dart';
 import 'package:cinemax/utils/styles.dart';
@@ -30,15 +30,14 @@ class Details extends StatelessWidget {
         ),
         body: Center(
           child: Container(
-              width: size.width * 0.99,
+              width: size.width * 0.95,
               height: 700,
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               decoration: BoxDecoration(
-                  color: Styles.primaryColor,
                   borderRadius: BorderRadius.circular(24)),
               child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 ConstrainedBox(
-                  constraints: const BoxConstraints(maxHeight: 450),
+                  constraints: const BoxConstraints(maxHeight: 430),
                   child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
@@ -60,7 +59,7 @@ class Details extends StatelessWidget {
                             children: [
                               Text(title,
                                   style: const TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       decoration: TextDecoration.none),
                                   textScaleFactor: 2),
                             ],
@@ -71,22 +70,17 @@ class Details extends StatelessWidget {
                       Text(
                         description,
                         style: const TextStyle(
-                            color: Colors.white, decoration: TextDecoration.none),
-                        textScaleFactor: 1.2,
+                            color: Colors.black, decoration: TextDecoration.none),
+                        textScaleFactor: 1.1,
                       ),
                       const SizedBox(
-                        height: 15,
+                        height: 50,
                       ),
                       Center(
-                          child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                              builder: ((context) => const BarItemPage())));
-                        },
-                            child: const Text("BOOK SEAT"),
-                      ))
+                          child: SizedBox(
+                            width:size.width * 0.8,
+                            child: const Button(),
+                          ))
                     ],
                   ),
                 )
