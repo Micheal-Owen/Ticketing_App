@@ -1,10 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
-import 'dart:async';
-import '';
-import 'dart:convert';
-
 import '../../utils/styles.dart';
 
 class Profile extends StatelessWidget {
@@ -28,10 +22,12 @@ class Profile extends StatelessWidget {
               children: [
                 Container(
                   decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              "data:image/jpeg;base64,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"),
-                          fit: BoxFit.cover)),
+                    image: DecorationImage(
+                      image: AssetImage("assets/gift_card_profile.jfif"),
+                      fit: BoxFit.cover,
+                      repeat: ImageRepeat.noRepeat,
+                    ),
+                  ),
                   child: SizedBox(
                     width: double.infinity,
                     height: 200,
@@ -39,7 +35,15 @@ class Profile extends StatelessWidget {
                       alignment: const Alignment(0.0, 2.5),
                       child: CircleAvatar(
                         radius: 60.0,
-                        child: Image.asset('assets/images/beach.jpg'),
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage('assets/images/profile_img.jfif'),
+                              fit: BoxFit.cover,
+                              repeat: ImageRepeat.noRepeat,
+                            ),
+                          ),
+                        )
                       ),
                     ),
                   ),
@@ -75,7 +79,7 @@ class Profile extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0),
                       ),
-                      backgroundColor: Colors.red,
+                      backgroundColor: Styles.primaryColor,
                     ),
                     child: const Padding(
                         padding:
@@ -90,8 +94,8 @@ class Profile extends StatelessWidget {
                   height: 15,
                 ),
                 Card(
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 20.0, vertical: 8.0),
+                  margin: const EdgeInsets.symmetric(
+                      horizontal: 20.0, vertical: 8.0),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
@@ -99,41 +103,42 @@ class Profile extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Column(
-                            children: const [
+                            children: [
                               Text(
                                 "Movies Watched",
                                 style: TextStyle(
-                                    color: Colors.redAccent,
+                                    color: Colors.blueGrey.shade900,
                                     fontSize: 22.0,
                                     fontWeight: FontWeight.w600),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 7,
                               ),
-                              Text(
+                              const Center(
+                                  child: Text(
                                 "4",
                                 style: TextStyle(
                                     color: Colors.blueGrey,
                                     fontSize: 22.0,
                                     fontWeight: FontWeight.w300),
-                              )
+                              ))
                             ],
                           ),
                         ),
                         Expanded(
                           child: Column(
-                            children: const [
+                            children: [
                               Text(
                                 "Points",
                                 style: TextStyle(
-                                    color: Colors.redAccent,
+                                    color: Colors.blueGrey.shade900,
                                     fontSize: 22.0,
                                     fontWeight: FontWeight.w600),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 7,
                               ),
-                              Text(
+                              const Text(
                                 "2000",
                                 style: TextStyle(
                                     color: Colors.blueGrey,
@@ -157,9 +162,9 @@ class Profile extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0),
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
-                        backgroundColor: Colors.red,
+                        backgroundColor: Styles.primaryColor,
                       ),
                       child: Container(
                         constraints: const BoxConstraints(
@@ -170,8 +175,8 @@ class Profile extends StatelessWidget {
                         child: const Text(
                           "Contact Us",
                           style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
+                            color: Colors.white,
+                            fontSize: 18.0,
                           ),
                         ),
                       ),
@@ -180,9 +185,9 @@ class Profile extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0),
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
-                        backgroundColor: Colors.red,
+                        backgroundColor: Styles.primaryColor,
                       ),
                       child: Container(
                         constraints: const BoxConstraints(
@@ -193,8 +198,8 @@ class Profile extends StatelessWidget {
                         child: const Text(
                           "Cinema Info",
                           style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
+                            color: Colors.white,
+                            fontSize: 18.0,
                           ),
                         ),
                       ),
@@ -211,21 +216,24 @@ class Profile extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0),
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
-                        backgroundColor: Colors.red,
+                        backgroundColor: Styles.primaryColor,
                       ),
-                      child: Container(
-                        constraints: const BoxConstraints(
-                          maxWidth: 400.0,
-                          maxHeight: 40.0,
-                        ),
-                        alignment: Alignment.center,
-                        child: const Text(
-                          "Tickets Purchased",
-                          style: TextStyle(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 0),
+                        child: Container(
+                          constraints: const BoxConstraints(
+                            maxWidth: 400.0,
+                            maxHeight: 40.0,
+                          ),
+                          alignment: Alignment.center,
+                          child: const Text(
+                            "Tickets Purchased",
+                            style: TextStyle(
                               color: Colors.white,
                               fontSize: 18,
+                            ),
                           ),
                         ),
                       ),
@@ -237,9 +245,9 @@ class Profile extends StatelessWidget {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(80.0),
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
-                        backgroundColor: Colors.red,
+                        backgroundColor: Styles.primaryColor,
                       ),
                       child: Container(
                         constraints: const BoxConstraints(
@@ -250,8 +258,8 @@ class Profile extends StatelessWidget {
                         child: const Text(
                           "Movies Watched",
                           style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
+                            color: Colors.white,
+                            fontSize: 18.0,
                           ),
                         ),
                       ),

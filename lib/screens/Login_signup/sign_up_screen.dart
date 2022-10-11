@@ -1,5 +1,6 @@
 // ignore_for_file: unused_import, prefer_const_constructors, use_build_context_synchronously
 import 'dart:io';
+import 'package:cinemax/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cinemax/screens/Login_signup/auth.dart';
@@ -35,7 +36,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         : GetBuilder<ImageController>(builder:(imageController){ 
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: Color.fromARGB(239, 255, 16, 16),
+              backgroundColor: Styles.primaryColor,
               title: Padding(
                 padding: EdgeInsets.all(80),
                 child: Text('Sign Up'),
@@ -193,7 +194,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         },
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromARGB(247, 255, 9, 9),
+                            Styles.primaryColor,
                           ),
                           shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(

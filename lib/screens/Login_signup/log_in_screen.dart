@@ -1,12 +1,12 @@
 // ignore_for_file: unused_import, sort_child_properties_last, prefer_const_constructors
 import 'package:cinemax/screens/cinema_location.dart';
+import 'package:cinemax/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'flutterfire.dart';
 import 'package:cinemax/screens/HomePage_and_Details/home_page.dart';
 import 'sign_up_screen.dart';
 import 'package:cinemax/main.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -24,20 +24,20 @@ class _LogInScreenState extends State<LogInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color.fromARGB(239, 255, 16, 16),
-          title: Center(
-            child: Text('Log In'),
-            ),
-          ),
-      
+        backgroundColor: Styles.primaryColor,
+        title: Center(
+          child: Text('Log In'),
+        ),
+      ),
       body: SingleChildScrollView(
         //alignment: Alignment.topCenter,
         child: Column(
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(20.0),
               child: Text('Tickets+ ',
-                  style: TextStyle(color: Color.fromARGB(255, 230, 16, 16), fontSize: 38.0)),
+                  style: TextStyle(
+                      backgroundColor: Styles.primaryColor, fontSize: 38.0)),
             ),
             Padding(
               padding: EdgeInsets.all(20.0),
@@ -58,41 +58,48 @@ class _LogInScreenState extends State<LogInScreen> {
                 controller: _passwordField,
                 obscureText: true,
                 decoration: InputDecoration(
-                    //border: OutlineInputBorder(borderRadius: BorderRadius.circular(60)),
-                    label: Text('password'),
+                  //border: OutlineInputBorder(borderRadius: BorderRadius.circular(60)),
+                  label: Text('password'),
                   icon: Icon(Icons.lock),
                 ),
                 keyboardType: TextInputType.visiblePassword,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 70,bottom: 200),
+              padding: const EdgeInsets.only(top: 70, bottom: 200),
               child: SizedBox(
                 width: 350,
                 height: 50,
-                child:OutlinedButton(
+                child: OutlinedButton(
                   onPressed: () async {
                     setState(() => loading = true);
-                    bool shouldNavigate = await logIn(_emailField.text, _passwordField.text);
+                    bool shouldNavigate =
+                        await logIn(_emailField.text, _passwordField.text);
                     if (shouldNavigate) {
                       setState(() => loading = false);
-                      Navigator.push(context, MaterialPageRoute(builder: (context) =>Location(),),);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Location(),
+                        ),
+                      );
                     } else {
                       setState(() => loading = false);
                       print('there is an error with log in details');
                     }
                   },
                   style: ButtonStyle(
-                    backgroundColor:
-                    MaterialStateProperty.all<Color>(Color.fromARGB(255, 241, 9, 9)),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))),
-
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                      Styles.primaryColor,
+                    ),
+                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15))),
                   ),
                   child: const Text(
                     'LOG IN',
                     style: TextStyle(color: Colors.white),
                   ),
-                ) ,
+                ),
               ),
             ),
             // Padding(
@@ -104,18 +111,23 @@ class _LogInScreenState extends State<LogInScreen> {
             //     color: Colors.grey,
             //   ),
             // ),
-            
+
             Row(
               children: <Widget>[
-                const Text('Does not have account?',style: TextStyle(fontSize: 18.0),),
+                const Text(
+                  'Does not have account?',
+                  style: TextStyle(fontSize: 18.0),
+                ),
                 TextButton(
-                  child: const Text(
-                    'Sign Up',
-                    style: TextStyle(fontSize: 19,color: Color.fromARGB(255, 241, 9, 9)),
-                  ),
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: ((context) =>SignUpScreen())))
-                  
-                )
+                    child: Text(
+                      'Sign Up',
+                      style: TextStyle(
+                          fontSize: 19, backgroundColor: Styles.primaryColor),
+                    ),
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => SignUpScreen()))))
               ],
               mainAxisAlignment: MainAxisAlignment.center,
             ),

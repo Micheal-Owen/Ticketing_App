@@ -106,7 +106,7 @@ class _PaymentsState extends State<Payments> {
                 child: Container(
                   padding: const EdgeInsets.all(20),
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.red,
+                  color: Styles.primaryColor,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: const [

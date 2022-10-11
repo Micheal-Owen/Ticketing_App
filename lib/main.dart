@@ -9,15 +9,15 @@ import 'package:cinemax/screens/Login_signup/log_in_screen.dart';
 import 'package:cinemax/screens/Login_signup/sign_up_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:dynamic_themes/dynamic_themes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(
-    ChangeNotifierProvider(create: (context) => SeatNumberModel(),
-      child: MyApp()));
+  runApp(ChangeNotifierProvider(
+      create: (context) => SeatNumberModel(), child: MyApp()));
 }
-  
+
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
@@ -31,10 +31,7 @@ class _MyAppState extends State<MyApp> {
     return StreamProvider<User?>.value(
       value: AuthService().user,
       initialData: null,
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Wrapper()
-      ),
+      child: MaterialApp(debugShowCheckedModeBanner: false, home: Wrapper()),
     );
   }
 }
